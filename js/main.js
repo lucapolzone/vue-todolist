@@ -41,10 +41,8 @@ const app = createApp({
     // funzione per salvare il valore di input e aggiungerlo alle task
     addTask() {
       //core della funzione
-      if (this.newTask.text.trim()) {
-          this.arrayTasks.push({ ...this.newTask });
-          this.newTask.text = '';
-      }
+      this.arrayTasks.push({ ...this.newTask });
+      this.newTask.text = '';
     }
   
   }
