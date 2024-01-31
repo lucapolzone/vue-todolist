@@ -22,6 +22,13 @@ const app = createApp({
           done: false
         }
       ],
+
+      // array collegato al valore di input
+      newTask: {
+        text: '',
+        done: false
+      },
+
     }
   },
 
@@ -30,7 +37,16 @@ const app = createApp({
     deleteTask(index) {
       this.arrayTasks.splice(index, 1);
     },
-
+    
+    // funzione per salvare il valore di input e aggiungerlo alle task
+    addTask() {
+      //core della funzione
+      if (this.newTask.text.trim()) {
+          this.arrayTasks.push({ ...this.newTask });
+          this.newTask.text = '';
+      }
+    }
+  
   }
 });
 

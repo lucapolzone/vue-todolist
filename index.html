@@ -26,10 +26,15 @@
 
     <!-- Inserisci una nuova attività -->
     <li class="input-group mb-3">
-      <input class="form-control" type="text" placeholder="Inserisci una nuova attività">
+      <input 
+        placeholder="Inserisci una nuova attività"
+        class="form-control" 
+        type="text"
+        v-model="newTask.text" 
+      >
       
       <!-- Bottone aggiungi attività -->
-      <span id="add-button" class="input-group-text">
+      <span id="add-button" @click="addTask()" class="input-group-text">
         +
       </span>
     </li>
