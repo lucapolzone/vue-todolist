@@ -4,7 +4,7 @@ const app = createApp({
   data() {
     return {
       //array attività
-      tasksArray: [
+      arrayTasks: [
         {
           text: "Attività n.1",
           done: false
