@@ -37,6 +37,7 @@
     <li v-for="(task, index) of arrayTasks" class="list-group-item d-flex justify-content-between">
       <div>
         <input class="form-check-input me-1" type="checkbox" id="checkbox">
+        <!-- stampa proprietà arrayTasks -->
         <span  
           :class="textDecoration = (task.done) ? 'text-decoration-line-through text-danger' : ''" 
         >
@@ -44,7 +45,11 @@
         </span>
       </div>
       
-      <button class="btn-close"></button>
+      <!-- Bottone per cancellare i task -->
+      <button 
+        class="btn-close" 
+        @click="deleteTask(index)">
+      </button>
     </li>
 
   </ul>

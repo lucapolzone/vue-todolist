@@ -23,6 +23,14 @@ const app = createApp({
         }
       ],
     }
+  },
+
+  methods: {
+    //funzione per cancellare una task
+    deleteTask(index) {
+      this.arrayTasks.splice(index, 1);
+    },
+
   }
 });
 
