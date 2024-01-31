@@ -19,13 +19,30 @@
 </head>
 <body>
 
-<div class="main d-flex align-items-center" id="app">
+<div class="container mx-auto" id="app">
+  <h1 class="text-center mt-2 mb-5">To do list</h1>
 
-	
-  
-  
-  
+  <ul class="list-group" id="list-group">
 
+    <!-- Inserisci una nuova attività -->
+    <li class="input-group mb-3">
+      <input class="form-control" type="text" placeholder="Inserisci una nuova attività">
+      
+      <!-- Bottone aggiungi attività -->
+      <span id="add-button" class="input-group-text">
+        +
+      </span>
+    </li>
+
+    <li class="list-group-item d-flex justify-content-between">
+      <div>
+        <input class="form-check-input me-1" type="checkbox" id="checkbox">
+        <label class="form-check-label" for="checkbox" id="checkbox-label">First checkbox</label>
+      </div>
+      <button class="btn-close "></button>
+    </li>
+
+  </ul>
 </div>
 
 <!-- My script -->
