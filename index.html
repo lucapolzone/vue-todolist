@@ -20,24 +20,9 @@
 <body>
 
 <div class="container mx-auto" id="app">
-  <h1 class="text-center mt-2 mb-5">To do list</h1>
-
+  <h1 class="text-center mt-2 mb-5">TO DO LIST</h1>
+  
   <ul class="list-group" id="list-group">
-
-    <!-- Inserisci una nuova attività -->
-    <li class="input-group mb-3">
-      <input 
-        placeholder="Inserisci una nuova attività"
-        class="form-control" 
-        type="text"
-        v-model="newTask.text" 
-      >
-      
-      <!-- Bottone aggiungi attività -->
-      <span id="add-button" @click="addTask()" class="input-group-text">
-        +
-      </span>
-    </li>
 
     <li v-for="(task, index) of arrayTasks" class="list-group-item d-flex justify-content-between">
       <div>
@@ -56,8 +41,27 @@
         @click="deleteTask(index)">
       </button>
     </li>
+    
+    <!-- Inserisci una nuova attività -->
+    <li class="input-group mt-3">
+      <input 
+        placeholder="Inserisci una nuova attività"
+        class="form-control" 
+        type="text"
+        v-model="newTask.text" 
+        @keyUp.enter="addTask()"
+      >
 
+      <!-- Bottone aggiungi attività -->
+      <span id="add-button" @click="addTask()" class="input-group-text">
+        +
+      </span>
+    </li>
   </ul>
+  <!-- Messaggio di feedback campo vuoto -->
+    <p v-if="emptyInputMessage == 'error'" class="text-danger">
+      Scrivi qualcosa per inserire una nuova attività
+    </p>
 </div>
 
 <!-- My script -->
